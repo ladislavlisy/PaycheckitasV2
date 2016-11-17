@@ -1,0 +1,41 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycheckitas.Common", "Paycheckitas.Common\Paycheckitas.Common.csproj", "{3021F7B3-EBA1-4332-B004-01217924C39F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Common", "Tests.Common\Tests.Common.csproj", "{A70FCF43-83DD-4A4A-9A6E-B86C5779A172}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycheckitas.CountryService", "Paycheckitas.CountryService\Paycheckitas.CountryService.csproj", "{B3527AED-181D-4482-B42F-B2CED06BE644}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycheckitas.CountryService.Interfaces", "Paycheckitas.CountryService.Interfaces\Paycheckitas.CountryService.Interfaces.csproj", "{8044D72E-76B1-4729-91BE-C7BF11FAAEF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycheckitas.CountryLocalCZ", "Paycheckitas.CountryLocalCZ\Paycheckitas.CountryLocalCZ.csproj", "{461C33CE-6297-4F84-A3E1-830BCBB74C68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3021F7B3-EBA1-4332-B004-01217924C39F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3021F7B3-EBA1-4332-B004-01217924C39F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3021F7B3-EBA1-4332-B004-01217924C39F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3021F7B3-EBA1-4332-B004-01217924C39F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A70FCF43-83DD-4A4A-9A6E-B86C5779A172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A70FCF43-83DD-4A4A-9A6E-B86C5779A172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A70FCF43-83DD-4A4A-9A6E-B86C5779A172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A70FCF43-83DD-4A4A-9A6E-B86C5779A172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3527AED-181D-4482-B42F-B2CED06BE644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3527AED-181D-4482-B42F-B2CED06BE644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3527AED-181D-4482-B42F-B2CED06BE644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3527AED-181D-4482-B42F-B2CED06BE644}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8044D72E-76B1-4729-91BE-C7BF11FAAEF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8044D72E-76B1-4729-91BE-C7BF11FAAEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8044D72E-76B1-4729-91BE-C7BF11FAAEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8044D72E-76B1-4729-91BE-C7BF11FAAEF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{461C33CE-6297-4F84-A3E1-830BCBB74C68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{461C33CE-6297-4F84-A3E1-830BCBB74C68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{461C33CE-6297-4F84-A3E1-830BCBB74C68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{461C33CE-6297-4F84-A3E1-830BCBB74C68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

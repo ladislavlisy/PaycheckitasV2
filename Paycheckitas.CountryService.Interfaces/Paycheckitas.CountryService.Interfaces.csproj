@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8044D72E-76B1-4729-91BE-C7BF11FAAEF5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Paycheckitas.CountryService.Interfaces</RootNamespace>
+    <AssemblyName>Paycheckitas.CountryService.Interfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ICountryProfile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Engines\IEmployEngine.cs" />
+    <Compile Include="Engines\IHealthEngine.cs" />
+    <Compile Include="Engines\ISocialEngine.cs" />
+    <Compile Include="Engines\ITaxingEngine.cs" />
+    <Compile Include="Guides\IPeriodEmployGuides.cs" />
+    <Compile Include="Guides\IEmployGuides.cs" />
+    <Compile Include="Constants\WorkRelationTerms.cs" />
+    <Compile Include="Constants\WorkHealthTerms.cs" />
+    <Compile Include="Constants\WorkSocialTerms.cs" />
+    <Compile Include="ICountryService.cs" />
+    <Compile Include="Engines\IEnginesHistory.cs" />
+    <Compile Include="HistoryPattern.cs" />
+    <Compile Include="EngineFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Paycheckitas.Common\Paycheckitas.Common.csproj">
+      <Project>{3021F7B3-EBA1-4332-B004-01217924C39F}</Project>
+      <Name>Paycheckitas.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Engines\" />
+    <Folder Include="Guides\" />
+    <Folder Include="Constants\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
