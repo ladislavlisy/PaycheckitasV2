@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Reflection;
 using Paycheckitas.CountryService.Interfaces;
 
@@ -11,9 +10,7 @@ namespace Paycheckitas.CountryService
 
 		private const string CLASS_NAME_PREFIX = "EmployEngine";
 
-		private const ushort DEFAULT_YEAR = 2016;
-
-		private readonly IList<HistoryPattern> DEFAULT_HISTORY;
+		private readonly IList<HistoryPattern> DEFAULT_HISTORY = new List<HistoryPattern> () { HistoryPattern.Year(2016) };
 
 		private EmployEnginesHistory()
 		{
@@ -24,21 +21,16 @@ namespace Paycheckitas.CountryService
 			return new EmployEnginesHistory();
 		}
 
-		public static IEnginesHistory<IEmployEngine> CreateEngines()
+		public static IEnginesHistory<IEmployEngine> CreateEngines(Assembly setupAssembly)
 		{
 			IEnginesHistory<IEmployEngine> engine = CreateInstance();
 
-			engine.InitEngines();
+			engine.InitEngines(setupAssembly);
 
 			return engine;
 		}
 
 		#region implemented abstract members of GeneralEngines
-
-		protected override ushort DefaultYear()
-		{
-			return DEFAULT_YEAR;
-		}
 
 		protected override IList<HistoryPattern> History()
 		{
@@ -53,11 +45,6 @@ namespace Paycheckitas.CountryService
 		protected override string ClassnamePrefix()
 		{
 			return CLASS_NAME_PREFIX;
-		}
-
-		protected override Assembly HistoryAssembly()
-		{
-			return typeof(CountryServiceModule).Assembly();
 		}
 
 		#endregion

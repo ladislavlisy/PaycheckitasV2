@@ -5,26 +5,42 @@ namespace Paycheckitas.CountryService.Interfaces
 {
 	public class HistoryPattern : IComparable
 	{
-		public static HistoryPattern Year(UInt16 year)
+		private const bool DEFAULT_PATTERN = true;
+
+		private const bool HISTORY_PATTERN = false;
+
+		public static HistoryPattern DefaultYear(UInt16 year)
 		{
-			return new HistoryPattern(year, year);
+			return new HistoryPattern(year, year, DEFAULT_PATTERN);
+		}
+
+		public static HistoryPattern Year (UInt16 year)
+		{
+			return new HistoryPattern (year, year, HISTORY_PATTERN);
+		}
+
+		public static HistoryPattern DefaultYears (UInt16 from, UInt16 upto)
+		{
+			return new HistoryPattern (from, upto, DEFAULT_PATTERN);
 		}
 
 		public static HistoryPattern Years(UInt16 from, UInt16 upto)
 		{
-			return new HistoryPattern(from, upto);
+			return new HistoryPattern(from, upto, HISTORY_PATTERN);
 		}
 
+		public bool DefaultPattern { get; private set; }
 		public UInt16 YearFrom { get; private set; }
 		public UInt16 YearUpto { get; private set; }
 
-		public HistoryPattern(UInt16 from, UInt16 upto)
+		public HistoryPattern(UInt16 from, UInt16 upto, bool defaultPattern)
 		{
+			this.DefaultPattern = defaultPattern;
 			this.YearFrom = from;
 			this.YearUpto = upto;
 		}
 
-		public HistoryPattern() : this(0, 0)
+		public HistoryPattern() : this(0, 0, HISTORY_PATTERN)
 		{
 		}
 		public static bool operator <(HistoryPattern x, HistoryPattern y)

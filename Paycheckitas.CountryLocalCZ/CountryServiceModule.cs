@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using Paycheckitas.Common.Core;
 using Paycheckitas.CountryService;
 using Paycheckitas.CountryService.Interfaces;
@@ -16,13 +17,15 @@ namespace Paycheckitas.CountryLocalCZ
 
 		private CountryServiceModule()
 		{
-			HistoryOfEmploy = EmployEnginesHistory.CreateEngines();
+			Assembly serviceModuleAssembly = this.GetType().Assembly;
 
-			HistoryOfTaxing = TaxingEnginesHistory.CreateEngines();
+			HistoryOfEmploy = EmployEnginesHistory.CreateEngines(serviceModuleAssembly);
 
-			HistoryOfHealth = HealthEnginesHistory.CreateEngines();
+			HistoryOfTaxing = TaxingEnginesHistory.CreateEngines(serviceModuleAssembly);
 
-			HistoryOfSocial = SocialEnginesHistory.CreateEngines();
+			HistoryOfHealth = HealthEnginesHistory.CreateEngines(serviceModuleAssembly);
+
+			HistoryOfSocial = SocialEnginesHistory.CreateEngines(serviceModuleAssembly);
 		}
 
 		public ICountryProfile BuildCountryProfile(Period period)

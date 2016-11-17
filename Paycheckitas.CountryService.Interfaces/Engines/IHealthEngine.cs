@@ -1,6 +1,7 @@
 ﻿namespace Paycheckitas.CountryService.Interfaces
 {
-	public interface IHealthEngine
+	public interface IHealthEngine : IPeriodHealthGuides
 	{
+		IHealthGuides Guides ();
 	}
 }

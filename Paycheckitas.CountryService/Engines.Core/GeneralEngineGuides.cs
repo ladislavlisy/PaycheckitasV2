@@ -3,9 +3,9 @@ using Paycheckitas.Common.Core;
 
 namespace Paycheckitas.CountryService
 {
-	public class EngineGeneralGuides
+	public class GeneralEngineGuides
 	{
-		public EngineGeneralGuides(int year)
+		public GeneralEngineGuides(int year)
 		{
 			ValidFrom = new Period(year, 1);
 			ValidUpto = new Period(year, 12);

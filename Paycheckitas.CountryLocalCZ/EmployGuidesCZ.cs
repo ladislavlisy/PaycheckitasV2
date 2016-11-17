@@ -6,7 +6,7 @@ namespace Paycheckitas.CountryLocalCZ.Employ
 {
 	public class EmployGuidesCZ : EmployGuides
 	{
-		public static IEmployGuides Guides2016()
+		public static EmployGuides Guides2016()
 		{
 			return new EmployGuidesCZ(
 				EmployProperties2016.YEAR,

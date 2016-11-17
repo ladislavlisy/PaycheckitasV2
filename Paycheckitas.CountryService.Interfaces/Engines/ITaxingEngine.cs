@@ -1,6 +1,7 @@
 ﻿namespace Paycheckitas.CountryService.Interfaces
 {
-	public interface ITaxingEngine
+	public interface ITaxingEngine : IPeriodTaxingGuides
 	{
+		ITaxingGuides Guides ();
 	}
 }

@@ -5,7 +5,7 @@ using Paycheckitas.CountryService.Interfaces;
 
 namespace Paycheckitas.CountryService.Employ
 {
-	public abstract class EmployGuides : EngineGeneralGuides, IEmployGuides
+	public abstract class EmployGuides : GeneralEngineGuides, IEmployGuides
 	{
 		private readonly Int32 __weeklyWorkingDays;
 

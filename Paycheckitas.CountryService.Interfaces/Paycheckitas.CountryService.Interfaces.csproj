@@ -36,15 +36,21 @@
     <Compile Include="Engines\IHealthEngine.cs" />
     <Compile Include="Engines\ISocialEngine.cs" />
     <Compile Include="Engines\ITaxingEngine.cs" />
-    <Compile Include="Guides\IPeriodEmployGuides.cs" />
     <Compile Include="Guides\IEmployGuides.cs" />
     <Compile Include="Constants\WorkRelationTerms.cs" />
     <Compile Include="Constants\WorkHealthTerms.cs" />
     <Compile Include="Constants\WorkSocialTerms.cs" />
     <Compile Include="ICountryService.cs" />
-    <Compile Include="Engines\IEnginesHistory.cs" />
     <Compile Include="HistoryPattern.cs" />
     <Compile Include="EngineFactory.cs" />
+    <Compile Include="Guides\ITaxingGuides.cs" />
+    <Compile Include="Guides\IHealthGuides.cs" />
+    <Compile Include="Guides\ISocialGuides.cs" />
+    <Compile Include="Guides.Period\IPeriodEmployGuides.cs" />
+    <Compile Include="Guides.Period\IPeriodHealthGuides.cs" />
+    <Compile Include="Guides.Period\IPeriodSocialGuides.cs" />
+    <Compile Include="Guides.Period\IPeriodTaxingGuides.cs" />
+    <Compile Include="History\IEnginesHistory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Paycheckitas.Common\Paycheckitas.Common.csproj">
@@ -56,6 +62,8 @@
     <Folder Include="Engines\" />
     <Folder Include="Guides\" />
     <Folder Include="Constants\" />
+    <Folder Include="Guides.Period\" />
+    <Folder Include="History\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

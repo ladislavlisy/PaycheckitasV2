@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38599213-9BDD-4D5D-A985-F305EFD0A408}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Tests.CountryService</RootNamespace>
+    <AssemblyName>Tests.CountryService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TestCountryService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Paycheckitas.Common\Paycheckitas.Common.csproj">
+      <Project>{3021F7B3-EBA1-4332-B004-01217924C39F}</Project>
+      <Name>Paycheckitas.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Paycheckitas.CountryLocalCZ\Paycheckitas.CountryLocalCZ.csproj">
+      <Project>{461C33CE-6297-4F84-A3E1-830BCBB74C68}</Project>
+      <Name>Paycheckitas.CountryLocalCZ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Paycheckitas.CountryService\Paycheckitas.CountryService.csproj">
+      <Project>{B3527AED-181D-4482-B42F-B2CED06BE644}</Project>
+      <Name>Paycheckitas.CountryService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Paycheckitas.CountryService.Interfaces\Paycheckitas.CountryService.Interfaces.csproj">
+      <Project>{8044D72E-76B1-4729-91BE-C7BF11FAAEF5}</Project>
+      <Name>Paycheckitas.CountryService.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

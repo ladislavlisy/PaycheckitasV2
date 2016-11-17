@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycheckitas.CountryService
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paycheckitas.CountryLocalCZ", "Paycheckitas.CountryLocalCZ\Paycheckitas.CountryLocalCZ.csproj", "{461C33CE-6297-4F84-A3E1-830BCBB74C68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.CountryService", "Tests.CountryService\Tests.CountryService.csproj", "{38599213-9BDD-4D5D-A985-F305EFD0A408}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,5 +39,9 @@ Global
 		{461C33CE-6297-4F84-A3E1-830BCBB74C68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{461C33CE-6297-4F84-A3E1-830BCBB74C68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{461C33CE-6297-4F84-A3E1-830BCBB74C68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38599213-9BDD-4D5D-A985-F305EFD0A408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38599213-9BDD-4D5D-A985-F305EFD0A408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38599213-9BDD-4D5D-A985-F305EFD0A408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38599213-9BDD-4D5D-A985-F305EFD0A408}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

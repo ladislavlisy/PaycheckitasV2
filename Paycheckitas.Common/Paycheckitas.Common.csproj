@@ -38,6 +38,7 @@
     <Compile Include="Factory\GeneralFactory.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Core\PeriodOperations.cs" />
+    <Compile Include="Extensions\TypeAssignExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
