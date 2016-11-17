@@ -42,7 +42,6 @@
     <Compile Include="Constants\WorkSocialTerms.cs" />
     <Compile Include="ICountryService.cs" />
     <Compile Include="HistoryPattern.cs" />
-    <Compile Include="EngineFactory.cs" />
     <Compile Include="Guides\ITaxingGuides.cs" />
     <Compile Include="Guides\IHealthGuides.cs" />
     <Compile Include="Guides\ISocialGuides.cs" />
