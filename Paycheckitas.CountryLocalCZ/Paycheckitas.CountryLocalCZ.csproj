@@ -32,7 +32,7 @@
   <ItemGroup>
     <Compile Include="EmployGuidesCZ.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties.Employ\EmployProperties2016.cs" />
+    <Compile Include="Guides.Properties\EmployProperties.cs" />
     <Compile Include="CountryServiceModule.cs" />
     <Compile Include="History.EmployEngines\EmployEngine2016.cs" />
     <Compile Include="History.HealthEngines\HealthEngine2016.cs" />
@@ -41,9 +41,9 @@
     <Compile Include="HealthGuidesCZ.cs" />
     <Compile Include="SocialGuidesCZ.cs" />
     <Compile Include="TaxingGuidesCZ.cs" />
-    <Compile Include="Properties.Health\HealthProperties2016.cs" />
-    <Compile Include="Properties.Social\SocialProperties2016.cs" />
-    <Compile Include="Properties.Taxing\TaxingProperties2016.cs" />
+    <Compile Include="Guides.Properties\HealthProperties.cs" />
+    <Compile Include="Guides.Properties\SocialProperties.cs" />
+    <Compile Include="Guides.Properties\TaxingProperties.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Paycheckitas.Common\Paycheckitas.Common.csproj">
@@ -60,14 +60,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties.Employ\" />
+    <Folder Include="Guides.Properties\" />
     <Folder Include="History.EmployEngines\" />
     <Folder Include="History.TaxingEngines\" />
     <Folder Include="History.SocialEngines\" />
     <Folder Include="History.HealthEngines\" />
-    <Folder Include="Properties.Taxing\" />
-    <Folder Include="Properties.Health\" />
-    <Folder Include="Properties.Social\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
