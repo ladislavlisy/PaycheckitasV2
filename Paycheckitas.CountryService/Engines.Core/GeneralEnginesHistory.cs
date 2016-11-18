@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Paycheckitas.Common;
@@ -7,7 +8,7 @@ using Paycheckitas.CountryService.Interfaces;
 
 namespace Paycheckitas.CountryService
 {
-	public abstract class GeneralEnginesHistory<T> : IEnginesHistory<T>
+	public abstract class GeneralEnginesHistory<T> : IEnginesHistory<T> where T : IGeneralEngine
 	{
 		public GeneralEnginesHistory()
 		{
@@ -34,16 +35,17 @@ namespace Paycheckitas.CountryService
 
 		public void InitWithPatterns(Assembly setupAssembly, IList<HistoryPattern> setupPatterns)
 		{
-			Engines = setupPatterns.ToDictionary(t => t, t => CreateEngineFor(setupAssembly, t));
+			Engines = setupPatterns.ToDictionary(t => t, t => CreateEngineForPattern(setupAssembly, t));
 		}
 
 		public void InitFromAssembly (Assembly setupAssembly)
 		{
-			var patternsList = setupAssembly.DefinedTypes.Where ((t) => (EngineType(t, NamespacePrefix (), ClassnamePrefix ()))).
+			var namesPatterns = setupAssembly.DefinedTypes.Where ((t) => (EngineType(t, NamespacePrefix (), ClassnamePrefix ()))).
 			                                Select((c) => (c.Name)).ToList();
-			                                                              
-			//Engines = patternsList.ToDictionary (t => t, t => CreateEngineFor (setupAssembly, t));
-			Engines = new Dictionary<HistoryPattern, T>();
+			
+			var clazzPatterns = namesPatterns.Select ((s) => (CreateEngineForClazz (setupAssembly, s))).ToList ();
+
+			Engines = clazzPatterns.ToDictionary (t => t.Pattern(), t => t);
 		}
 
 		private static bool EngineType (TypeInfo typeInfo, string engineNameSpace, string engineClassPrefix)
@@ -82,10 +84,24 @@ namespace Paycheckitas.CountryService
 			return DefaultInstance;
 		}
 
-		private T CreateEngineFor(Assembly setupAssembly, HistoryPattern pattern)
+		private T CreateEngineForPattern(Assembly setupAssembly, HistoryPattern pattern)
 		{
-			T engine = EngineFactory<T>.InstanceFor(setupAssembly, NamespacePrefix(), ClassnamePrefix(), pattern);
+			T engine = EngineFactory<T>.InstanceForPattern(setupAssembly, NamespacePrefix(), ClassnamePrefix(), pattern);
 
+			return engine;
+		}
+
+		private T CreateEngineForClazz(Assembly setupAssembly, string className)
+		{
+			T engine = EngineFactory<T>.InstanceForClazz (setupAssembly, NamespacePrefix (), className);
+
+			HistoryPattern enginePattern = engine.Pattern ();
+
+			HistoryPattern clazezPattern = HistoryPattern.FromText (className);
+
+			if (enginePattern.Equals (clazezPattern) == false) {
+				throw new InvalidOperationException ("Invalid Class and Pattern: " + className);
+			}
 			return engine;
 		}
 

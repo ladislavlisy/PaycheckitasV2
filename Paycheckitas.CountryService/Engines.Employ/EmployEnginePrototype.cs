@@ -9,12 +9,21 @@ namespace Paycheckitas.CountryService.Employ
 	{
 		public EmployEnginePrototype(EmployGuides currentGuides)
 		{
-			EngineGuides = currentGuides.Clone() as IEmployGuides;
+			EngineGuides = currentGuides.Clone () as IEmployGuides;
+
+			EnginePattern = HistoryPattern.Years(EngineGuides.YearFrom(), EngineGuides.YearUpto (), EngineGuides.IsDefault ());
 		}
 
 		private IEmployGuides EngineGuides { get; set; }
 
+		private HistoryPattern EnginePattern { get; set; }
+
 		#region IEmployEngine implementation
+
+		public HistoryPattern Pattern ()
+		{
+			return EnginePattern;
+		}
 
 		public IEmployGuides Guides()
 		{

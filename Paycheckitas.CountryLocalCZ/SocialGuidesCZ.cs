@@ -8,10 +8,12 @@ namespace Paycheckitas.CountryLocalCZ.Social
 	{
 		public static SocialGuides Guides2016 ()
 		{
-			return new SocialGuidesCZ (SocialProperties2016.YEAR);
+			return new SocialGuidesCZ (SocialProperties2016.DEFAULT,
+				SocialProperties2016.YEAR, SocialProperties2016.YEAR);
 		}
 
-		protected SocialGuidesCZ (int validYear) : base (validYear)
+		protected SocialGuidesCZ (bool defaultGuides, int validFrom, int validUpto) : 
+			base (defaultGuides, validFrom, validUpto)
 		{
 		}
 

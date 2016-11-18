@@ -50,6 +50,7 @@
     <Compile Include="Guides.Period\IPeriodSocialGuides.cs" />
     <Compile Include="Guides.Period\IPeriodTaxingGuides.cs" />
     <Compile Include="History\IEnginesHistory.cs" />
+    <Compile Include="History\IGeneralEngine.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Paycheckitas.Common\Paycheckitas.Common.csproj">

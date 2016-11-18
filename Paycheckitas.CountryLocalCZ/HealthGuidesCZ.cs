@@ -8,10 +8,12 @@ namespace Paycheckitas.CountryLocalCZ.Health
 	{
 		public static HealthGuides Guides2016 ()
 		{
-			return new HealthGuidesCZ (HealthProperties2016.YEAR);
+			return new HealthGuidesCZ (HealthProperties2016.DEFAULT,
+				HealthProperties2016.YEAR, HealthProperties2016.YEAR);
 		}
 
-		protected HealthGuidesCZ (int validYear) : base(validYear)
+		protected HealthGuidesCZ (bool defaultGuides, int validFrom, int validUpto) : 
+			base(defaultGuides, validFrom, validUpto)
 		{
 		}
 

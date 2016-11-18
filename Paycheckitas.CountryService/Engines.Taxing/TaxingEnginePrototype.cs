@@ -8,17 +8,27 @@ namespace Paycheckitas.CountryService.Taxing
 		public TaxingEnginePrototype (TaxingGuides currentGuides)
 		{
 			EngineGuides = currentGuides.Clone () as ITaxingGuides;
+
+			EnginePattern = HistoryPattern.Years (EngineGuides.YearFrom (), EngineGuides.YearUpto (), EngineGuides.IsDefault ());
 		}
 
 		private ITaxingGuides EngineGuides { get; set; }
 
+		private HistoryPattern EnginePattern { get; set; }
+
 		#region ITaxingEngine implementation
-		#endregion
+
+		public HistoryPattern Pattern ()
+		{
+			return EnginePattern;
+		}
 
 		public ITaxingGuides Guides ()
 		{
 			return EngineGuides;
 		}
+
+		#endregion
 
 		#region IPeriodTaxingGuides implementation
 		#endregion

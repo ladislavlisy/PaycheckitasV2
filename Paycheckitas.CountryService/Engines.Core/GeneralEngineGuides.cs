@@ -5,10 +5,30 @@ namespace Paycheckitas.CountryService
 {
 	public class GeneralEngineGuides
 	{
-		public GeneralEngineGuides(int year)
+		private bool DefaultGuides { get; set; }
+
+		public GeneralEngineGuides(bool defaultGuides, int yearFrom, int yearUpto)
 		{
-			ValidFrom = new Period(year, 1);
-			ValidUpto = new Period(year, 12);
+			DefaultGuides = defaultGuides;
+
+			ValidFrom = new Period(yearFrom, 1);
+
+			ValidUpto = new Period(yearUpto, 12);
+		}
+
+		public bool IsDefault ()
+		{
+			return DefaultGuides;
+		}
+
+		public UInt16 YearFrom ()
+		{
+			return (UInt16)ValidFrom.Year;
+		}
+
+		public UInt16 YearUpto ()
+		{
+			return (UInt16)ValidUpto.Year;
 		}
 
 		public Period ValidFrom { get; private set; }

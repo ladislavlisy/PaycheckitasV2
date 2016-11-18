@@ -15,9 +15,9 @@ namespace Paycheckitas.CountryService.Employ
 
 		private readonly Int32 __weeklyWorkingSeconds;
 
-		protected EmployGuides(int validYear,
-			Int32 weeklyWorkingDays,
-			Int32 dailyWorkingHours) : base(validYear)
+		protected EmployGuides(bool defaultGuides, int validFrom, int validUpto,
+			Int32 weeklyWorkingDays, Int32 dailyWorkingHours) : 
+			base(defaultGuides, validFrom, validUpto)
 		{
 			__weeklyWorkingDays = weeklyWorkingDays;
 

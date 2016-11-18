@@ -1,6 +1,6 @@
 ﻿namespace Paycheckitas.CountryService.Interfaces
 {
-	public interface ISocialEngine : IPeriodSocialGuides
+	public interface ISocialEngine : IGeneralEngine, IPeriodSocialGuides
 	{
 		ISocialGuides Guides ();
 	}

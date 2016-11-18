@@ -5,7 +5,8 @@ namespace Paycheckitas.CountryService.Health
 {
 	public abstract class HealthGuides : GeneralEngineGuides, IHealthGuides
 	{
-		protected HealthGuides (int validYear) : base (validYear)
+		protected HealthGuides (bool defaultGuides, int validFrom, int validUpto) : 
+			base (defaultGuides, validFrom, validUpto)
 		{
 
 		}

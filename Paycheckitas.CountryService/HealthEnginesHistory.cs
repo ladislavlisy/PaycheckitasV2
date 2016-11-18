@@ -10,7 +10,7 @@ namespace Paycheckitas.CountryService
 
 		private const string CLASS_NAME_PREFIX = "HealthEngine";
 
-		private readonly IList<HistoryPattern> DEFAULT_HISTORY = new List<HistoryPattern> () { HistoryPattern.Year (2016) };
+		private readonly IList<HistoryPattern> DEFAULT_HISTORY = new List<HistoryPattern> () { HistoryPattern.DefaultYear (2016) };
 
 		private HealthEnginesHistory ()
 		{
@@ -23,11 +23,11 @@ namespace Paycheckitas.CountryService
 
 		public static IEnginesHistory<IHealthEngine> CreateEngines (Assembly setupAssembly)
 		{
-			IEnginesHistory<IHealthEngine> engine = CreateInstance ();
+			IEnginesHistory<IHealthEngine> enginesHistory = CreateInstance ();
 
-			engine.InitEngines (setupAssembly);
+			enginesHistory.InitEngines (setupAssembly);
 
-			return engine;
+			return enginesHistory;
 		}
 
 		#region implemented abstract members of GeneralEngines

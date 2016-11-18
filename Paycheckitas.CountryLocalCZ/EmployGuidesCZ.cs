@@ -8,13 +8,14 @@ namespace Paycheckitas.CountryLocalCZ.Employ
 	{
 		public static EmployGuides Guides2016()
 		{
-			return new EmployGuidesCZ(
-				EmployProperties2016.YEAR,
+			return new EmployGuidesCZ(EmployProperties2016.DEFAULT,
+				EmployProperties2016.YEAR, EmployProperties2016.YEAR, 
 				EmployProperties2016.DAYS_WORKING_WEEKLY,
 				EmployProperties2016.HOURS_WORKING_DAILY);
 		}
 
-		protected EmployGuidesCZ(int validYear, Int32 weeklyWorkingDays, Int32 dailyWorkingHours) : base(validYear, weeklyWorkingDays, dailyWorkingHours)
+		protected EmployGuidesCZ(bool defaultGuides, int validFrom, int validUpto, Int32 weeklyWorkingDays, Int32 dailyWorkingHours) : 
+			base(defaultGuides, validFrom, validUpto, weeklyWorkingDays, dailyWorkingHours)
 		{
 		}
 

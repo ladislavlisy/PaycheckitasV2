@@ -5,6 +5,12 @@ namespace Paycheckitas.CountryService.Interfaces
 {
 	public interface IEmployGuides
 	{
+		bool IsDefault ();
+
+		UInt16 YearFrom ();
+
+		UInt16 YearUpto ();
+
 		bool ValidatePeriod(Period period);
 
 		Int32 WeeklyWorkingDaysGuide();

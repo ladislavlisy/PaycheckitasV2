@@ -8,10 +8,12 @@ namespace Paycheckitas.CountryLocalCZ.Taxing
 	{
 		public static TaxingGuides Guides2016 ()
 		{
-			return new TaxingGuidesCZ (TaxingProperties2016.YEAR);
+			return new TaxingGuidesCZ (TaxingProperties2016.DEFAULT,
+				TaxingProperties2016.YEAR, TaxingProperties2016.YEAR);
 		}
 
-		protected TaxingGuidesCZ (int validYear) : base (validYear)
+		protected TaxingGuidesCZ (bool defaultGuides, int validFrom, int validUpto) : 
+			base (defaultGuides, validFrom, validUpto)
 		{
 		}
 

@@ -3,7 +3,7 @@ using Paycheckitas.Common.Core;
 
 namespace Paycheckitas.CountryService.Interfaces
 {
-	public interface IEmployEngine : IPeriodEmployGuides
+	public interface IEmployEngine : IGeneralEngine, IPeriodEmployGuides
 	{
 		IEmployGuides Guides();
 
